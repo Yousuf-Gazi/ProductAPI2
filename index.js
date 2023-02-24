@@ -1,11 +1,14 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const routes = require('./routes');
 
 // creating our express app
 const app = express();
 
 //middleware
 app.use(bodyParser.json());
+
+app.use('/', routes);
 
 app.get('/', (req, res) => {
     res.json({
